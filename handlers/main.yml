@@ -5,6 +5,7 @@
   service:
     name: collector
     state: restarted
+  when: skip_handlers == False or skip_handlers is undefined
 
 # Workaround a bug with SysV scripts on a SystemD-based OS, with ansible 1.x.
 # NOTE: A fix for this is in 2.x, so eventually it won't be needed
